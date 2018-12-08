@@ -4020,7 +4020,7 @@ react-is@^16.6.1:
 
 "react-native-metronome@git://github.com/kotlyar562/react-native-metronome.git":
   version "0.1.0"
-  resolved "git://github.com/kotlyar562/react-native-metronome.git#78f1e2811ecab5778bcd94e68474611ac968baa3"
+  resolved "git://github.com/kotlyar562/react-native-metronome.git#b7fd9ce929135d3b1a7c7e55e495ad5350ead1d2"
 
 react-native@0.57.7:
   version "0.57.7"

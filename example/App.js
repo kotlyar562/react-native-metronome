@@ -6,24 +6,50 @@
  * @flow
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import React, { Component } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  TextInput
+} from "react-native";
+import Metronome from "react-native-metronome";
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+export default class App extends Component {
+  state = {
+    bpm: 80,
+    soundNumber: 0
+  };
 
-type Props = {};
-export default class App extends Component<Props> {
+  changeBpm = bpm => {
+    this.setState({ bpm: +bpm });
+  };
+
+  play = () => {
+    Metronome.play(this.state.bpm);
+  };
+
+  nextSound = () => {
+    Metronome.nextSound();
+  };
+
+  stop = () => {
+    Metronome.stop();
+  };
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <TouchableOpacity onPress={this.play}>
+          <Text>Play</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.nextSound}>
+          <Text>Next Sound</Text>
+        </TouchableOpacity>
+        <TextInput value={"" + this.state.bpm} onChangeText={this.changeBpm} />
+        <TouchableOpacity onPress={this.stop}>
+          <Text>Stop</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -32,18 +58,8 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    justifyContent: "space-around",
+    alignItems: "center",
+    backgroundColor: "#F5FCFF"
+  }
 });
