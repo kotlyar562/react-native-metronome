@@ -13,7 +13,6 @@ import android.net.Uri;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.io.Exception;
 
 public class RNMetronomeModule extends ReactContextBaseJavaModule {
 
@@ -53,7 +52,7 @@ public class RNMetronomeModule extends ReactContextBaseJavaModule {
       Uri uri = Uri.parse("android.resource://" + getReactApplicationContext().getPackageName() + "/raw/sounds/1");
       mMediaPlayer.setDataSource(getCurrentActivity(), uri);
       mMediaPlayer.prepare();
-    } catch (Exception e) {
+    } catch (IOException e) {
       Log.e("RNMetronome", "Exception", e);
     }
   }

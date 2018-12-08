@@ -1,3 +1,5 @@
 rootProject.name = 'example'
 
 include ':app'
+include ':react-native-metronome'
+project(':react-native-metronome').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-metronome/android')
