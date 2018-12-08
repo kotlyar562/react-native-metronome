@@ -1,8 +1,11 @@
 # react-native-metronome
 
+# NOTE! For now supported only Android!
+
 ## Getting started
 
-`$ npm install react-native-metronome --save`
+Add to package.json dependencies line
+`"react-native-metronome": "git://github.com/kotlyar562/react-native-metronome.git"`
 
 ### Mostly automatic installation
 
@@ -19,9 +22,9 @@
 
 #### Android
 
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
+1. Open up `android/app/src/main/java/[...]/MainApplication.java`
 
-- Add `import com.kotlyar562.RNMetronome.RNMetronomePackage;` to the imports at the top of the file
+- Add `import com.metronome.RNMetronomePackage;` to the imports at the top of the file
 - Add `new RNMetronomePackage()` to the list returned by the `getPackages()` method
 
 2. Append the following lines to `android/settings.gradle`:
@@ -33,6 +36,7 @@
    ```
      compile project(':react-native-metronome')
    ```
+4. Important! Copy [sounds](https://github.com/kotlyar562/react-native-metronome/tree/master/example/android/app/src/main/res/raw) to folder `android/app/src/main/java/res/raw`
 
 ## Usage
 
@@ -40,4 +44,16 @@
 import Metronome from "react-native-metronome";
 
 ...
+
+Metronome.play(80); //play with 80 bpm
+
+Metronome.nextSound(); //play next sound
+
+Metronome.stop(); // stop playing
+
+...
 ```
+
+_If you change bpm, call play() again._
+
+**Show [example](https://github.com/kotlyar562/react-native-metronome/tree/master/example) for more info**
