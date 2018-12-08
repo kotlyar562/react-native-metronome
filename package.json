@@ -1,0 +1,24 @@
+
+{
+  "name": "react-native-metronome",
+  "version": "0.1.0",
+  "description": "Simple RN metronome",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kotlyar562/react-native-metronome.git"
+  },
+  "keywords": [
+    "react-native",
+    "react-component",
+    "metronome"
+  ],
+  "author": "Kotlyar Andrey <kotlyar562@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react-native": "^0.55"
+  }
+}
