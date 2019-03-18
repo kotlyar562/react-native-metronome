@@ -51,6 +51,10 @@ Metronome.nextSound(); //play next sound
 
 Metronome.stop(); // stop playing
 
+Metronome.isPlay(status => {
+  console.log(status);
+})
+
 ...
 ```
 
